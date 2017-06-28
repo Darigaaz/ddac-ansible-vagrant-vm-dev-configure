@@ -1,5 +1,10 @@
 ---
 
-- name: Hello
+- name: Include config
+  include_vars:
+    dir: /vagrant/provisioning/ansible/host_vars
+    name: provisioning
+
+- name: test
   debug:
-    msg: Hello
+    msg: '{{ provisioning }}'
